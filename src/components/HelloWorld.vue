@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
+    <p>{{ persons }}</p>
+    <input type="text" ref="name" />
+    <button @click="handleClick">Click me</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -36,6 +40,23 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      title: 'this is a title',
+      persons: [
+          {
+            'name': 'Mati',
+            'age': 'Mati'              
+          }
+      ]
+    }
+  },
+  methods: {
+      handleClick(){
+          console.log(this.$refs.name);
+          this.$refs.name.classList.add('active');
+      }
   }
 }
 </script>

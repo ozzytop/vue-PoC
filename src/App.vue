@@ -1,10 +1,30 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+    <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+    </div>
+    <Modal />
   <router-view/>
 </template>
+
+<script>
+
+import Modal from './components/Modal'; 
+
+export default {
+    name: 'App',
+    components: {
+        Modal
+    },
+    data() {
+        return {
+            title: 'First Vue App'
+        }
+    }
+}
+
+</script>
+
 
 <style>
 #app {
